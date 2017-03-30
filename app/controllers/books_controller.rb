@@ -13,7 +13,7 @@ class BooksController < ApplicationController
     @book.pages = params[:pages]
     @book.author_id = params[:author_id]
     @book.amazon_url = params[:amazon_url]
-    @book.picture_url = params [:picture_url]
+    @book.picture_url = params[:picture_url]
     @book.save
     
     redirect_to '/books'
