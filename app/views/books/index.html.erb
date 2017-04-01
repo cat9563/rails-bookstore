@@ -8,7 +8,7 @@
     <h5 class="mt-0"><%= link_to book.title, "/books/#{book.id}"%></h5>
     <p><%=book.description%></p>
     <p class="mb-0"><%=book.pages%> pgs </p>
-    <p><%= link_to 'Amazon',"/books/#{book.amazon_url}/amazon", class: 'btn-btn default' %>
+    <p><%= link_to 'Amazon',book.amazon_url, class: 'btn-btn default' %>
     <p>Author ID: <%=book.author_id%></p>
     <%= link_to 'Edit', "/books/#{book.id}/edit", class: 'btn-btn default' %>
 </div>
