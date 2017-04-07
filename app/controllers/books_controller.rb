@@ -20,7 +20,7 @@ class BooksController < ApplicationController
           redirect_to '/books'
       else
           render action: 'new'
-      end
+    end
   end
   
   def edit
@@ -40,11 +40,21 @@ class BooksController < ApplicationController
             redirect_to '/books'
         else
             render action: 'edit'
-        end
     end
+  end
 
   def show
     @book = Book.find params[:id]
   end
 
+  def create_review
+    @review = Review.new
+    @review.rating = params[:rating]
+    @review.text = params[:text]
+    @review.username = params[:username]
+    @review.book_id = params[:id]
+    @review.save
+    
+    redirect_to "/books/"
+  end
 end

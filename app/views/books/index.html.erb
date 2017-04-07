@@ -6,6 +6,10 @@
   <img class="d-flex align-self-end mr-3 book-thumb" src="<%= book.picture_url %>" 
   <div class="media-body">
     <h5 class="mt-0"><%= link_to book.title, "/books/#{book.id}"%></h5>
+    <% book.rating.times do %>
+      <i class ="fa fa-star"></i>
+      <% end %>
+    <hr></hr>
     <p><%=book.description%></p>
     <p class="mb-0"><%=book.pages%> pgs </p>
     <p><%= link_to 'Amazon',book.amazon_url, class: 'btn-btn default' %>
